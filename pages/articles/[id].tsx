@@ -2,8 +2,9 @@ import {useRouter} from 'next/router'
 import useSWR from 'swr'
 import MainContainer from "../../components/MainContainer";
 import styles from '../../styles/Article.module.scss'
+import {ArticleType} from "../../types";
 
-const fetcher = async (url) => {
+const fetcher = async (url): Promise<ArticleType> => {
     const res = await fetch(url)
     const data = await res.json()
 
