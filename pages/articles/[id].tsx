@@ -1,8 +1,9 @@
-import {useRouter} from 'next/router'
+import {NextRouter, useRouter} from 'next/router'
 import useSWR from 'swr'
 import MainContainer from "../../components/MainContainer";
 import styles from '../../styles/Article.module.scss'
 import {ArticleType} from "../../types";
+import {BaseRouter} from "next/dist/next-server/lib/router/router";
 
 const fetcher = async (url): Promise<ArticleType> => {
     const res = await fetch(url)
@@ -16,7 +17,7 @@ const fetcher = async (url): Promise<ArticleType> => {
 
 export default function Article() {
     const {query} = useRouter()
-    const {data, error} = useSWR(
+    const {data, error} = useSWR<ArticleType>(
         () => query.id && `/api/articles/${query.id}`,
         fetcher
     )
