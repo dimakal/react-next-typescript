@@ -1,0 +1,45 @@
+.mainWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.header {
+  padding: 20px 15px;
+  background: #fdf79d;
+
+  box-shadow: 0 1px 10px #777;
+
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a {
+    font-weight: bold;
+    margin: 0 15px;
+
+    &:visited {
+      color: inherit;
+    }
+
+    &:hover {
+      color: red;
+    }
+  }
+}
+
+.footer {
+  background: #555;
+  padding: 30px 15px;
+  color: #fff;
+  text-align: center;
+}
+
+.content {
+  padding: 50px 0;
+  text-align: center;
+  flex: 1;
+}
