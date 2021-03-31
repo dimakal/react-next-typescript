@@ -1,6 +1,6 @@
 import { articles } from '../../../data'
-import {ArticleType} from "../../../types";
+import {NextApiRequest, NextApiResponse} from "next";
 
-export default function handler(req, res): Promise {
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
   res.status(200).json(articles)
 }

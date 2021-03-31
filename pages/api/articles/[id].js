@@ -1,6 +1,7 @@
 import { articles } from '../../../data'
+import {NextApiRequest, NextApiResponse} from "next";
 
-export default function articleHandler({ query: { id } }, res) {
+export default function articleHandler({ query: { id } }: NextApiRequest, res: NextApiResponse) {
   const filtered = articles.filter((article) => article.id === id)
 
   // User with id exists
