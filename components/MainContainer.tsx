@@ -1,14 +1,14 @@
-import React, {ReactNode} from "react"
+import React, {ReactElement, ReactNode} from "react"
 import Head from "next/head";
 import Link from "./Link";
 import styles from '../styles/MainContainer.module.scss'
 
-type MainContainerProps = {
-    children?: ReactNode
+type Props = {
+    children: ReactNode
     title?: string
 }
 
-const MainContainer: React.FC<MainContainerProps> = ({children, title = 'Next.js'}: MainContainerProps) => {
+const MainContainer: React.FC<Props> = ({children, title = 'Next.js app'}): ReactElement => {
     return (
         <div className={styles.mainWrapper}>
             <Head>
